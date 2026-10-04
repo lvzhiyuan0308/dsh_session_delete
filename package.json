@@ -1,0 +1,19 @@
+{
+  "name": "dsh_session_delete",
+  "version": "0.1.0",
+  "description": "Delete a DSH sidebar conversation after confirmation",
+  "repository": { "type": "git", "url": "https://github.com/lvzhiyuan0308/dsh_session_delete.git" },
+  "type": "module",
+  "main": "index.js",
+  "exports": { ".": "./index.js", "./client": "./client.js", "./package.json": "./package.json" },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "README.md"],
+  "engines": { "node": ">=22.19" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "inject": ["@deepseek-ai/dsh-client-ui-workspace", "@deepseek-ai/dsh-client-ui-session", "@deepseek-ai/dsh-client-ui-slots", "@deepseek-ai/dsh-client-ui-layout"]
+    }
+  },
+  "license": "MIT"
+}
